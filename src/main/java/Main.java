@@ -20,6 +20,11 @@ public class Main {
 class Car {
 //    this == 자기 자신을 가르킴 
 //    this()는 생성자를 가르킴
+
+//    private == 선언된 클래스 내에서만 접근 가능
+//    public  == 선언된 클래스를 넘어 다른 패키지에서도 접근 가능
+//    default == 선언된 클래스가 있는 패키지 내에서 접근 가능
+//    protect == default + 선언된 클래스의 자식 클래스는 다른 패키지에서 접근 가능
     private String modelName;
     private int modelYear;
 
