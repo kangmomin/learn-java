@@ -27,8 +27,21 @@ class Car {
 //    public  == 선언된 클래스를 넘어 다른 패키지에서도 접근 가능
 //    default == 선언된 클래스가 있는 패키지 내에서 접근 가능
 //    protect == default + 선언된 클래스의 자식 클래스는 다른 패키지에서 접근 가능
+    static String className;
     private String modelName;
     private int modelYear;
+
+//    ===========클래스 내의 변수를 초기화 해줄 수 있음.=========
+//    인스턴스 초기화 블록
+    {
+        modelYear = 10;
+    }
+
+//    클래스 변수 초기화 블록
+    static {
+        className = "Car";
+    }
+//    ===========클래스 내의 변수를 초기화 해줄 수 있음.=========
 
 //    Car setter
     Car(String modelName, int modelYear) {
@@ -49,6 +62,7 @@ class Test {
 //
 //    변수 == 인스턴스 변수
 //    해당 클래스를 활용해 만드는 인스턴스가 생성될 때부터 끝날때 까지.
+//    위 내용은 함수(메소드)에도 동일하게 적용됨
     static void display(int num1) { System.out.println(num1); }
     static void display(int num1, int num2) { System.out.println(num1 * num2); }
     static void display(int num1, double num2) { System.out.println(num1 + num2); }
