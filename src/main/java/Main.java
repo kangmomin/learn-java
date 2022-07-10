@@ -28,8 +28,8 @@ class Car {
 //    default == 선언된 클래스가 있는 패키지 내에서 접근 가능
 //    protect == default + 선언된 클래스의 자식 클래스는 다른 패키지에서 접근 가능
     static String className;
-    private String modelName;
-    private int modelYear;
+    public String modelName;
+    public int modelYear;
 
 //    ===========클래스 내의 변수를 초기화 해줄 수 있음.=========
 //    인스턴스 초기화 블록
@@ -52,6 +52,22 @@ class Car {
 
     public String getModel() {
         return this.modelYear+"년식 "+this.modelName;
+    }
+}
+
+// Car클래스의 defualt생성자가 있어야 함(예제에는 없어도 괜찮다 뜨는데 뭐 그렇다고 하니께)
+class hisCar extends Car {
+    public int c = 0;
+
+    // 이 부분 이 없으면 디폴트 메소드 없다고 에러뜸
+    hisCar(String modelName, int modelYear) {
+        super(modelName, modelYear);
+    }
+
+    void display() {
+        new Car("ionic", 2018);
+        System.out.println(getModel());
+        System.out.println(c);
     }
 }
 
