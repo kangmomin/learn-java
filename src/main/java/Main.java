@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
 //        const != final
 //        final은 const와 같이 상수 선언도 해주나
-//        오버라이딩을 통한 타입 변경 제선언도 불가함.
+//        오버라이딩을 통한 타입 변경 제선언도 불가함.+
         final int AGES = 100;
 //        타입 변환
         System.out.println((double) AGES);
@@ -16,12 +16,49 @@ public class Main {
         }
 //            1 2 3 4 5 for of?
         Car myCar = new Car("아반떼", 2016);
+
+        Parent testP = new Parent();
+        Parent test = new Child();
+        test.display(); // 자식 클래스의 display()
+//        메소드 오버라이딩
+//        부모 메소드를 같은 이름의 메소드를 자식 메소드에 선언함으로써 덮어씌움.
+
+        Parent test2 = new Brother();
+        Parent test3 = new Child();
+//        Child test4 = new Brother();
+//        Child test5 = new Parent();
+//        다향성 / 자식 클래스 끼리는 동일 타입으로 취급하지 않고
+//        부모 클래스는 자식클래스로 그대로 대입 가능하며
+//        부모 클래스는 자식 클래스에 타입 변환 없이 대입 불가.
+        System.out.println(test3 instanceof Parent); // true
+        System.out.println(test3 instanceof Child); // true
+        System.out.println(testP instanceof Child); // false
     }
+}
+
+class Parent {
+    void display() { System.out.println("부모 클래스의 display() 메소드입니다."); }
+}
+
+class Child extends Parent {
+    void display() { System.out.println("자식 클래스의 display() 메소드입니다."); }
+}
+
+class Brother extends Parent {
+    void display() { System.out.println("형제 클래스의 display() 메소드입니다."); }
+}
+
+// 추상 클래스는 추상 메소드를 포함하기 위해 있음
+// 추상 메소드는 오버라이딩한 자식 클래스에게 만들어야하는 메소드를 알려주는 가이드 같은 존재
+abstract class abstractTest {
+    abstract void cry();
+    void crying(){};
 }
 
 class Car {
 //    this == 자기 자신을 가르킴 
 //    this()는 생성자를 가르킴
+//    super와 super()도 위와 같음
 
 //    private == 선언된 클래스 내에서만 접근 가능
 //    public  == 선언된 클래스를 넘어 다른 패키지에서도 접근 가능
