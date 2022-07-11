@@ -168,3 +168,21 @@ class Polymorphism03 {
     }
 }
 // =============== interface ==================
+
+// =============== inner class ================
+class outer {
+//    static한 class 주로 outer 클래스의 메소드 역할
+     static class inner1 {}
+//    local class 외부 접근은 불가하며 지역 내에서만 사용 가능한 클래스
+//    local class ex1)
+    { class inner2 {} }
+//    local class ex2)
+    void innerClass() { class inner3{} }
+//    익명 클래스인데 계속 에러 뜸.
+//    Insect inner4 = new Insect() {void innerFunc() {}};
+
+//    인스턴트 클래스
+//    outer클래스 영역에 정의 됐으며 static제어자가 없는 클래스로 인스턴트 생성시 사용 가능.
+    class Inner5 {}
+}
+// =============== inner class ================
