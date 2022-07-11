@@ -49,7 +49,8 @@ class Brother extends Parent {
 }
 
 // 추상 클래스는 추상 메소드를 포함하기 위해 있음
-// 추상 메소드는 오버라이딩한 자식 클래스에게 만들어야하는 메소드를 알려주는 가이드 같은 존재
+// 추상 메소드는 오버라이딩한 "자식" 클래스에게 만들어야하는 메소드를 알려주는 가이드 같은 존재
+// abstract class는 상속 관계를 따지며 해당 관계 내에서의 공통 기능이 필요할 때 사용한다.
 abstract class abstractTest {
     abstract void cry();
     void crying(){};
@@ -132,3 +133,38 @@ class Method06 {
         func.display(10, 'a');
     }
 }
+
+// =============== interface ==================
+// 모든 필드는 public static final(해당 클래스 자체 선언 및 변경 불가) 이며
+// 모든 메소드는 public abstract이다. 제어자는 생략 가능.
+interface Animal { void cry(); }
+interface Animal2 { void cry(); }
+
+// abstract class(추상 클래스)는 단수만이 상속될 수 있지만
+// interface는 implements를 통한 다수의 interface를 상속시킬 수 있다.
+// interface와 abstract class는 기능적으론 비슷하나 사용 목적에서 확연한 차이가 난다.
+
+// 추상 클래스는 클래스에서 함수를 정의해 같은 이름의 메소드를 호출하면 둘중 어느 클래스의
+// 메소드인지 알 수 없는 모호성을 지니기에 다중성을 금한다.
+// interface는 애초에 함수의 가이드이기 때문에 두가지 기능이 완성형으로 들어오지 않기 때문에
+// 오버라이딩을 할 때 두개의 메소드를 나누지 않고 한번에 설정이 가능하다.
+// *즉 interface는 상속 관계에 상관 없이 공통의 기능이 필요할 때 사용하고
+// abstract class는 상속 관계를 따지며 해당 관계 내에서의 공통 기능이 필요할 때 사용한다.*
+class Cat implements Animal, Animal2 {
+    public void cry() { System.out.println("냐옹냐옹!"); }
+}
+
+class Dog implements Animal {
+    public void cry() { System.out.println("멍멍!"); }
+}
+
+class Polymorphism03 {
+    public static void main(String[] args) {
+        Cat c = new Cat();
+        Dog d = new Dog();
+
+        c.cry();
+        d.cry();
+    }
+}
+// =============== interface ==================
