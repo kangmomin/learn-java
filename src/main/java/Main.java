@@ -206,3 +206,32 @@ class stringBuffer {
     }
 }
 // =============== string buffer ===============
+
+// =============== wrapper =====================
+class Wrapper02 {
+//    타입과 달리 클래스로서 value만 갖는게 아닌 value는 데이터 형식으로 갖고 있으며 ~Value()를 통해 언박싱이 가능하다.
+//    선언부터 래퍼 클래스를 쓰거나 Integer클래스를 int변수에 담으면 오토언박싱이 된다.
+    public static void main(String[] args) {
+        Integer num1 = new Integer(7); // 박싱
+        Integer num2 = new Integer(3); // 박싱
+
+        int int1 = num1.intValue();    // 언박싱
+        int int2 = num2.intValue();    // 언박싱
+
+        Integer result1 = num1 + num2; // 10
+        Integer result2 = int1 - int2; // 4
+        int result3 = num1 * int2;     // 21
+    }
+    public class Wrapper03 {
+        public static void main(String[] args) {
+            Integer num1 = new Integer(10);
+            Integer num2 = new Integer(20);
+            Integer num3 = new Integer(10);
+
+            System.out.println(num1 < num2);       // true
+            System.out.println(num1 == num3);      // false
+            System.out.println(num1.equals(num3)); // true
+        }
+    }
+}
+// =============== wrapper =====================
