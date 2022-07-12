@@ -186,3 +186,23 @@ class outer {
     class Inner5 {}
 }
 // =============== inner class ================
+
+// =============== string buffer ===============
+class stringBuffer {
+//    string buffer클래스는 string과 달리 가변 클래스이다.
+//    insert, append와 같은 함수로 값을 추가할 수 있는데 string은 그런 작업이 concat으로만 가능하게 되어있다.
+//    불변 클래스는 멀티 쓰레드에서 하나의 객체에 접근하되 다른 객체에 영향을 주기 싫을떄 사용하는데
+//    가변 클래스에 비해 불변성이 보장되기 때문에 신뢰할 수 있는 코드를 짤 수 있기 때문이다.
+//
+//    stringBuffer는 기본 string의 버퍼 사이즈보다 16정도의 크기를 더 가져 추후 변화에 대응할 수 있게 한다.
+//    concat은 문자 한글자를 추가할 때마다 메모리 주소를 할당하는데
+//    stringBuffer는 버퍼 자체를 수정하기에 속도가 빠르고 메모리 낭비가 없다.
+    private void del() {
+        StringBuffer str = new StringBuffer("Hello world!");
+        System.out.println(str.delete(4, 8)); // Hellrld!
+        System.out.println(str.deleteCharAt(1)); // Hllo world!
+        System.out.println(str.insert(5, " the")); // Hello the world!
+        System.out.println(str.reverse()); // !dlrow olleH
+    }
+}
+// =============== string buffer ===============
