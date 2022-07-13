@@ -236,3 +236,30 @@ class Wrapper02 {
     }
 }
 // =============== wrapper =====================
+
+// =============== enum ====================
+
+// 관련된 상수의 집합.
+class enumExample {
+    enum Day {
+        MONDAY,TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+    }
+
+    public enum RoadSide {
+        Left("왼쪽"),
+        Right("오른쪽");
+
+        //        상수들의 타입
+        private String krName;
+
+        //        setter는 추후 업뎃을 하지 않는 상수이기에 private로 한다.
+        private RoadSide(String krName, int krNames) {
+            this.krName = krName;
+        }
+
+        public String getKrName() {
+            return krName;
+        }
+    }
+}
+// =============== enum ====================
