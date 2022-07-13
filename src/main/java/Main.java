@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 //        const != final
@@ -253,7 +255,7 @@ class enumExample {
         private String krName;
 
         //        setter는 추후 업뎃을 하지 않는 상수이기에 private로 한다.
-        private RoadSide(String krName, int krNames) {
+        private RoadSide(String krName) {
             this.krName = krName;
         }
 
@@ -263,3 +265,29 @@ class enumExample {
     }
 }
 // =============== enum ====================
+
+// =============== generic =================
+
+// go의 제너릭과는 느낌이 다름.
+// 하나의 클래스에 정해진 값이 아닌 타입이 들어와서 인스턴스 클래스를 완성해주는 느낌임.
+class generic {
+    class AnimalList<T> {
+        ArrayList<T> al = new ArrayList<T>();
+
+        void add(T animal) { al.add(animal); }
+        T get(int index) { return al.get(index); }
+        boolean remove(T animal) { return al.remove(animal); }
+        int size() { return al.size(); }
+    }
+
+    void run() {
+//        int, double, char같은 타입은 wrapper을 해야 사용 가능.
+        AnimalList<Integer> a = new AnimalList<Integer>();
+        AnimalList<String> b = new AnimalList<String>();
+
+        a.add(1);
+        b.add("hello world");
+    }
+}
+
+// =============== generic =================
