@@ -270,6 +270,11 @@ class enumExample {
 
 // go의 제너릭과는 느낌이 다름.
 // 하나의 클래스에 정해진 값이 아닌 타입이 들어와서 인스턴스 클래스를 완성해주는 느낌임.
+
+// interface를 쓰더라도 implements가 아닌 extends를 써야 함.
+interface WarmBlood {}
+class AnimalLists<T extends WarmBlood> {}
+
 class generic {
     class AnimalList<T> {
         ArrayList<T> al = new ArrayList<T>();
@@ -278,6 +283,12 @@ class generic {
         T get(int index) { return al.get(index); }
         boolean remove(T animal) { return al.remove(animal); }
         int size() { return al.size(); }
+
+        public static <T> void sort(ArrayList<T> list, ArrayList<? super T> comp) {}
+//        Wild Card
+//        <?>           // 타입 변수에 모든 타입을 사용할 수 있음.
+//        <? extends T> // T 타입과 T 타입을 상속받는 자손 클래스 타입만을 사용할 수 있음.
+//        <? super T>   // T 타입과 T 타입이 상속받은 조상 클래스 타입만을 사용할 수 있음.
     }
 
     void run() {
