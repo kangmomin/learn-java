@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -302,3 +304,31 @@ class generic {
 }
 
 // =============== generic =================
+
+// =============== Collection Interface ================
+
+// === Array list ===
+// ArrayList는 자료구조의 List방식이 아니다.
+// ArrayList의 기본 사이즈는 10인데 10개 이상의 값을 넣으면
+// 기존 값 + 기존값 / 2를 하여 배열을 복사한다. 이렇다 보니 배열의 장점인 서칭은 가져왔지만 데이터 수정, 추가, 삭제의 속도는 느리다.
+// === Array list ===
+
+// === LinkedList ===
+// List방식을 따른다.
+// SingleLinkedList는 단방향으로 위치를 기억하기에 전 값을 찾기는 힘들다.
+// 하지만 DoubleLinkedList가 이 문제점을 해결한다.
+// === LinkedList ===
+
+// == LinkedList vs ArrayList ==
+//            | ArrayList | LinkedList
+// Read speed | fast      | slow
+// add, remove| slow      | fast
+
+// etc ArrayList
+// 비효율적인 메모리 사용, 데이터의 순차적 추가, 삭제시 빠름.
+
+// etc LinkedList
+// 데이터가 많을 수록 접근성은 떨어짐.
+// == LinkedList vs ArrayList ==
+
+// =============== Collection Interface ================
