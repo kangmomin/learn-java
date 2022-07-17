@@ -331,4 +331,16 @@ class generic {
 // 데이터가 많을 수록 접근성은 떨어짐.
 // == LinkedList vs ArrayList ==
 
+// === HashSet ===
+// hash 알고리즘를 이용한 저장방식이다.
+// Key가 배열에 저장될 때 배열의 어느 위치에 저장되는지 숨겨지며 배열 내에 연결리스트도 있다.
+// 서칭시 속도가 빠르다
+// 값의 중복이 불가능 하다
+// === HashSet ===
+
+// === TreeSet ===
+// binarySearch tree의 형태로 저장함.
+// 값의 중복이 불가능 하다
+// 저장되는 값이 모두 정렬된다.
+// === TreeSet ===
 // =============== Collection Interface ================
