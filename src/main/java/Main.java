@@ -355,4 +355,8 @@ class generic {
 // error나 exaption클래스의 부모 클래스로 모든 에러의 부모 클래스이다.
 // 에러에 관한 다양한 정보를 읽을 수 있는 메소드를 제공한다.
 // === throwable class ===
+
+// === try with resource ===
+// try(resource) {} == defer resorce.Close() in Golang
+// === try with resource ===
 // =============== try catch =========================
