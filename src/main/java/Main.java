@@ -360,3 +360,16 @@ class generic {
 // try(resource) {} == defer resorce.Close() in Golang
 // === try with resource ===
 // =============== try catch =========================
+
+// =============== thread ============================
+// JAVA는 멀티 쓰레드가 가능한 언어이다.
+// Thread클래스를 상속받아 해당 클래스 자체를 타 쓰레드에서 돌게 할 수도 있지만
+// Thread test = new Thread(method); test.start()를 통해서 멀티 쓰레드를 실행할 수도 있다.
+
+// === daemon thread ===
+// 데몬 쓰레드는 다른 일반 쓰레드를 보조하는 역할을 한다.
+// 타 쓰레드가 모두 종료되면 자동 종료된다.
+// ex) gabage collector
+// === daemon thread ===
+// =============== thread ============================
+
